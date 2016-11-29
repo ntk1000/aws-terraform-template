@@ -20,8 +20,7 @@ re: ## enable terraform remote state management (tfstate file stored at s3) 'mak
 		terraform remote config \
 		-backend=s3 \
 		-backend-config='bucket=${TF_VAR_team}-tfstate' \
-		-backend-config='key=terraform.tfstate' && \
-		terraform remote push
+		-backend-config='key=${PROJ}/${ENV}/terraform.tfstate'
 
 rd: ## disable terraform remote state management (tfstate file stored at local) 'make rd PROJ=x ENV=stg'
 	@${CD} && \

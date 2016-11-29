@@ -59,6 +59,7 @@ export AWS_DEFAULT_REGION=YOURREGION
 # TF_VAR
 export TF_VAR_team=your-team-name
 export TF_VAR_email_sns_subscription_arn=your-mail-sns-subscription-arn
+...
 ```
 
 ### init
@@ -104,4 +105,8 @@ about directory structure
 
 about audit-trail
 * http://blog.father.gedow.net/2016/07/21/aws-is-too-complex/
+
+## trouble shooting
+
+remove terraform.tfstate under .terraform folder
 
