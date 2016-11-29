@@ -1,6 +1,6 @@
-PROJ = $1
-ENV = $2
-COMMAND = $3
+PROJ = $(PROJ)
+ENV = $(ENV)
+COMMAND = $(COMMAND)
 CD = [ -d ${PROJ}/${ENV} ] && cd ${PROJ}/${ENV}
 
 .PHONY: all
@@ -28,3 +28,5 @@ rd: ## disable terraform remote state management (tfstate file stored at local) 
 		terraform remote config \
 		-disable
 
+test: ## test args
+	@echo PROJ:${PROJ} ENV:${ENV} COMMAND:${COMMAND}
