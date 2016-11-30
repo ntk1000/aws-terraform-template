@@ -2,7 +2,7 @@
 resource "aws_security_group" "lb" {
     name = "${var.project}-${var.env}-lb"
     description = "security group for elb"
-    vpc_id = "${aws_vpc.main.id}"
+    vpc_id = "${var.vpc-id}"
     ingress {
         protocol = "tcp"
         from_port = 80
@@ -31,7 +31,7 @@ resource "aws_security_group" "lb" {
 resource "aws_security_group" "app" {
     name = "${var.project}-${var.env}-app"
     description = "security group for app"
-    vpc_id = "${aws_vpc.main.id}"
+    vpc_id = "${var.vpc-id}"
     ingress {
         protocol = "tcp"
         from_port = 80
@@ -60,7 +60,7 @@ resource "aws_security_group" "app" {
 resource "aws_security_group" "mysql" {
     name = "${var.project}-${var.env}-mysql"
     description = "security group for mysql or aurora"
-    vpc_id = "${aws_vpc.main.id}"
+    vpc_id = "${var.vpc-id}"
     ingress {
         protocol = "tcp"
         from_port = 3306

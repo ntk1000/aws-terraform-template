@@ -5,10 +5,7 @@ variable "env" {}
 variable "gip_1" {}
 variable "gip_2" {}
 variable "gip_3" {}
-
-variable "cidr" {
-    default = "10.2.0.0/16"
-}
+variable "vpc_id_stg" {}
 
 variable "cidr-public-aza" {
     default = "10.2.0.0/23"

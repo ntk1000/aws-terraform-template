@@ -1,5 +1,5 @@
 resource "aws_s3_bucket" "project" {
-    bucket = "${var.project}-${var.env}"
+    bucket = "${var.team}-${var.project}-${var.env}"
     acl = "private"
     force_destroy = true
 

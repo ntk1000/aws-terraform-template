@@ -9,7 +9,7 @@ resource "aws_s3_bucket" "tfstate" {
     }
 
     tags {
-        "project" = "global"
+        "project" = "common"
         "env" = "all"
         "Name" = "${var.team}-tfstate"
     }
