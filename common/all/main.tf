@@ -12,6 +12,13 @@ module "billing-alert" {
     email_sns_subscription_arn_us = "${var.email_sns_subscription_arn_us}"
 }
 
+module "vpc" {
+    source = "../../modules/vpc"
+    cidr = "${var.cidr}"
+    project = "${var.project}"
+    env = "${var.env}"
+}
+
 module "common" {
     source = "../../"
     team = "${var.team}"
